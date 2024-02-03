@@ -11,7 +11,7 @@ export default function Page() {
 
   const prettyPlease = () => {
     $please(true);
-    setInteractionCount(0);
+    setInteractionCount(0); // Reiniciar el contador a 0 al hacer hover sobre "Yes"
   };
 
   const nope = () => {
@@ -20,9 +20,11 @@ export default function Page() {
 
     $p({ x: `${x}%`, y: `${y}%` });
 
-    if (interactionCount >= 9) {
+    if (interactionCount >= 4) {
+      // Mostrar pompu-tears.gif si el contador es 4 o más
       $please(true);
     } else {
+      // Mostrar cinaStand.gif si el contador es menos de 4
       $please(false);
     }
 
@@ -30,16 +32,16 @@ export default function Page() {
   };
 
   const resetImage = () => {
-    return please && interactionCount >=9 ? '/pompu-tears.gif' : please ? '/cinaexcited.gif' : '/cinaStand.gif';
+    return please && interactionCount >=4 ? '/pompu-tears.gif' : please ? '/cinaexcited.gif' : '/cinaStand.gif';
   };
 
   const handleYesHover = () => {
-    $please(true);
+    $please(true); // Mostrar siempre cinaexcited al hacer hover sobre "Yes"
   };
 
   const handleYesOut = () => {
-    
-    $please(interactionCount >= 9);
+    // Mostrar el GIF correspondiente según las reglas 1 y 2 al salir del hover sobre "Yes"
+    $please(interactionCount >= 4);
   };
 
   return (
@@ -49,13 +51,13 @@ export default function Page() {
         className='gif'
         src={resetImage()}
       />
-       {interactionCount >= 10
+       {interactionCount >= 5
           ? '¡No me amas?!'
           : 'Pau me darías el honor de ser tu Valentine?'}
       <div className='btns'>
         <Link className='yes' href='/yay'>
           <button onMouseOver={prettyPlease} onMouseOut={handleYesOut} onMouseEnter={handleYesHover} onMouseLeave={handleYesOut}>
-            Si
+            Yes
           </button>
         </Link>
         <button
