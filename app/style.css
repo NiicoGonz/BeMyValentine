@@ -1,8 +1,8 @@
 #app {
-  background: #fefefe;
-  color: #4b4c4d;
+  background: #fde3f9; /* Rosa pastel */
+  color: #6a5d6b; /* Tono de púrpura suave */
   display: grid;
-  font: 900 3rem Jua;   
+  font: 900 3rem 'Jua', sans-serif;   
   height: 100vh;
   margin: 0;
 }
@@ -33,11 +33,12 @@
 }
 
 button {
-  background: #59c9e8;
+  background: #e68fd9; /* Lila suave */
   border: none;
   border-radius: 15px;
   color: #fff;
   cursor: pointer;
-  font: 900 2rem Jua;   
+  font: 900 2rem 'Jua', sans-serif;   
   padding: 15px 30px;
 }
+
