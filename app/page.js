@@ -57,7 +57,7 @@ export default function Page() {
       <div className='btns'>
         <Link className='yes' href='/yay'>
           <button onMouseOver={prettyPlease} onMouseOut={handleYesOut} onMouseEnter={handleYesHover} onMouseLeave={handleYesOut}>
-            Yes
+            Si
           </button>
         </Link>
         <button
