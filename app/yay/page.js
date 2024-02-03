@@ -16,7 +16,7 @@ export default function Page() {
       Yayyy~
       <div>
         <button className='yes' onClick={openYouTubeVideo}>
-          Abrir Video de YouTube y Volver
+          Te amuuuuuuu!
         </button>
       </div>
     </div>
